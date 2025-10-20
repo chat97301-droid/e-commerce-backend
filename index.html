@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar - Improved</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">AliRaza<span>Reviews</span></a>
+            
+            <nav id="nav">
+                <ul> 
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search products...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="mobile-search">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="user-profile">
+                        <div class="user-avatar">U</div>
+                        <span class="user-name">User</span>
+                        <button class="logout-btn">Logout</button>
+                    </div>
+                    <a href="#" class="login">Login</a>
+                    <a href="#" class="signup">Sign Up</a>
+                </div>
+                
+                <button class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay for Mobile -->
+    <div class="search-overlay">
+        <div class="search-overlay-content">
+            <span class="close-search"><i class="fas fa-times"></i></span>
+            <input type="text" placeholder="Search products..." autofocus>
+        </div>
+    </div>
+    
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your account to continue</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+                </div>
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="submit-btn">Sign In</button>
+            </form>
+            <div class="social-login">
+                <p>Or sign in with</p>
+                <div class="social-buttons">
+                    <button class="social-btn google" id="googleSignInBtn">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                Don't have an account? <a href="#" id="showSignup">Sign up</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="form-header">
+                <h2>Create Account</h2>
+                <p>Sign up to get started with AliRazaReviews</p>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signupName" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" placeholder="Create a password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+            <div class="social-login">
+                <p>Or sign up with</p>
+                <div class="social-buttons">
+                    <button class="social-btn google" id="googleSignUpBtn">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                Already have an account? <a href="#" id="showLogin">Sign in</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <h1>Responsive Navbar Demo</h1>
+        <p>This is a demonstration of the improved mobile-friendly navbar. Resize your browser window to see how it adapts to different screen sizes.</p>
+        <p>The navbar now includes:</p>
+        <ul>
+            <li>Better mobile menu with animation</li>
+            <li>Search overlay for mobile devices</li>
+            <li>Improved touch targets for mobile users</li>
+            <li>Better spacing and sizing for small screens</li>
+            <li>Enhanced login and signup forms with social options</li>
+        </ul>
+        <p>Try opening this page on a mobile device or resizing your browser window to test the responsive behavior.</p>
+    </div>
+
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
